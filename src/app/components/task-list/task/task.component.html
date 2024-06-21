@@ -1,0 +1,43 @@
+<li class="list-group-item">
+  <div class="row align-items-center">
+    <div class="col-auto">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="task"
+        (change)="onTaskDondeChange()"
+      >
+    </div>
+    <div class="col-auto">
+      <label
+        class="form-check-label"
+        for="task"
+      >
+        <p class="text-break m-0"><b>{{task.title}}</b></p>
+      </label>
+    </div>
+    <div class="col-auto">
+      <p class="text-break m-0">
+        {{task.description}}
+      </p>
+    </div>
+    <div class="col">
+      <div class="row justify-content-end gap-1">
+        <div class="col-auto ">
+          <button
+            class="btn btn-warning btn-sm"
+            (click)="onClickEditBtn()"
+          >Edit</button>
+        </div>
+        <div class="col-auto ">
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="onClickDeleteBtn()"
+          >Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</li>

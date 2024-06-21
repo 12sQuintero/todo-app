@@ -1,0 +1,22 @@
+<article class="card">
+  <div class="card-body d-flex row-gap-4 flex-wrap">
+
+    <app-task-form class="col-12"></app-task-form>
+
+    <ul class="list-group col-12 row-gap-3">
+      @for (task of tasktList; track $index) {
+      <app-task [task]="task"></app-task>
+      }@empty {
+      <ngb-alert
+        [dismissible]="false"
+        type="success"
+      >
+        <p class="text-center m-0">
+          <strong>Great!</strong> No tasks pending!
+        </p>
+      </ngb-alert>
+      }
+
+    </ul>
+  </div>
+</article>

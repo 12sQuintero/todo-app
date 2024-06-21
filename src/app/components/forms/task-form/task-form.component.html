@@ -1,0 +1,48 @@
+@if(form){
+<form
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="row row-gap-2">
+    <div class="col-12 col-md-5">
+      <div class="form-floating"><input
+          id="taskTitleInput"
+          type="text"
+          class="form-control "
+          [ngClass]="{'is-invalid':form.get('title')?.invalid && form.get('title')?.dirty}"
+          placeholder="Add a new task"
+          formControlName="title"
+          required
+        >
+        <label for="taskTitleInput">Title</label>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <div class="form-floating">
+        <textarea
+          id="taskTextArea"
+          type="text"
+          class="form-control "
+          [ngClass]="{'is-invalid':form.get('description')?.invalid && form.get('description')?.dirty}"
+          placeholder="Description..."
+          formControlName="description"
+          required
+        ></textarea>
+        <label for="taskTextArea">Description</label>
+      </div>
+
+    </div>
+    <div class="col align-content-stretch">
+      <button
+        [disabled]="form.invalid"
+        class="btn btn-primary w-100 h-100"
+        type="submit"
+      >{{task?'Edit':'Add'}} Task</button>
+    </div>
+  </div>
+
+
+
+
+</form>
+}
